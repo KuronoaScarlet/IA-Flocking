@@ -232,7 +232,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &717162097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,6 +255,8 @@ MonoBehaviour:
   minSpeed: 5
   maxSpeed: 7
   rotationSpeed: 6
+  boundsWeight: 5
+  boundsDistance: 10
   swimLimit: 15
 --- !u!4 &717162098
 Transform:
@@ -399,7 +401,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2134702653
 MonoBehaviour:
   m_ObjectHideFlags: 0
