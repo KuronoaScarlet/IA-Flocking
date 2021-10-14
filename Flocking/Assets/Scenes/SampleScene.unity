@@ -232,7 +232,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &717162097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,15 +246,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishPrefab: {fileID: 5416635492741550847, guid: 9a018e4b3122b0e4c8456d7e5e4f6603, type: 3}
-  numFish: 100
   minPosition: {x: -3, y: -3, z: -3}
   maxPosition: {x: 3, y: 3, z: 3}
   allFish: []
+  numFish: 100
   acumulator: {fileID: 1345383658}
   neighbourDistance: 40
-  minSpeed: 2
-  maxSpeed: 3
-  rotationSpeed: 1
+  minSpeed: 5
+  maxSpeed: 7
+  rotationSpeed: 6
   swimLimit: 15
 --- !u!4 &717162098
 Transform:
@@ -382,4 +382,62 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2134702652
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2134702654}
+  - component: {fileID: 2134702653}
+  m_Layer: 0
+  m_Name: asdasdasdasd
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2134702653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134702652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db9b176b38c4bb045a17657da7bdd650, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flockUnitPrefab: {fileID: 7839856812070203753, guid: 74b765175af202a46b7246fd3c357473, type: 3}
+  flockSize: 100
+  spawnBounds: {x: 10, y: 5, z: 10}
+  _minSpeed: 2
+  _maxSpeed: 1
+  _cohesionDistance: 5
+  _avoidanceDistance: 2
+  _aligementDistance: 2
+  _obstacleDistance: 7
+  _boundsDistance: 20
+  _cohesionWeight: 2
+  _avoidanceWeight: 3.64
+  _aligementWeight: 0
+  _boundsWeight: 10
+  _obstacleWeight: 0
+--- !u!4 &2134702654
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134702652}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.7003749, y: -25.140724, z: 1.3101441}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

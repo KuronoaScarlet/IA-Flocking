@@ -6,10 +6,10 @@ using UnityEngine;
 public class FlockingManager : MonoBehaviour
 {
     public GameObject fishPrefab;
-    public int numFish;
     public Vector3 minPosition;
     public Vector3 maxPosition;
     public GameObject[] allFish;
+    public int numFish;
     public Transform acumulator;
     public float neighbourDistance;
     [Range(0f, 10f)]
@@ -18,6 +18,9 @@ public class FlockingManager : MonoBehaviour
     public float maxSpeed;
     [Range(0f, 10f)]
     public float rotationSpeed;
+
+    public float boundsWeight;
+    public float boundsDistance;
 
     public int swimLimit;
 
