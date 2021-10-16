@@ -19,9 +19,6 @@ public class FlockingManager : MonoBehaviour
     [Range(0f, 10f)]
     public float rotationSpeed;
 
-    public float boundsWeight;
-    public float boundsDistance;
-
     public int swimLimit;
 
     // Start is called before the first frame update

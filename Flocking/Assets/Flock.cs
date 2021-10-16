@@ -39,7 +39,7 @@ public class Flock : MonoBehaviour
     {
         Vector3 dir = Vector3.zero;
         var offsetToCenter = myManager.transform.position - transform.position;
-		bool isNearCenter = (offsetToCenter.magnitude >= myManager.boundsDistance * 0.9f);
+		
 
         dir = (Cohesion()+ Align() + Separation()).normalized * speed;
 
