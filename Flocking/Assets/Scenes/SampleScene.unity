@@ -366,16 +366,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishPrefab: {fileID: 8516706227426777723, guid: 83ee1043aaf654f42bfbb79654865a82, type: 3}
-  minPosition: {x: -3, y: -3, z: -3}
-  maxPosition: {x: 3, y: 3, z: 3}
+  minPosition: {x: -2, y: -2, z: -2}
+  maxPosition: {x: 2, y: 2, z: 2}
   allFish: []
-  numFish: 100
+  numFish: 150
   acumulator: {fileID: 1345383658}
-  neighbourDistance: 40
-  minSpeed: 4.99
-  maxSpeed: 6.49
-  rotationSpeed: 6.8
-  swimLimit: 5
+  neighbourDistance: 50
+  minSpeed: 3.5
+  maxSpeed: 6
+  rotationSpeed: 7
+  swimLimit: 6
 --- !u!4 &717162098
 Transform:
   m_ObjectHideFlags: 0
@@ -532,22 +532,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db9b176b38c4bb045a17657da7bdd650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flockUnitPrefab: {fileID: 7839856812070203753, guid: 74b765175af202a46b7246fd3c357473, type: 3}
-  flockSize: 100
-  spawnBounds: {x: 10, y: 5, z: 10}
-  _minSpeed: 2
-  _maxSpeed: 1
-  _cohesionDistance: 5
-  _avoidanceDistance: 2
-  _aligementDistance: 2
-  _obstacleDistance: 7
-  _boundsDistance: 20
-  _cohesionWeight: 2
-  _avoidanceWeight: 3.64
-  _aligementWeight: 0
-  _boundsWeight: 10
-  _obstacleWeight: 0
-  <allUnits>k__BackingField: []
 --- !u!4 &2134702654
 Transform:
   m_ObjectHideFlags: 0
