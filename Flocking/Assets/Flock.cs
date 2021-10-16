@@ -14,36 +14,38 @@ public class Flock : MonoBehaviour
     
     void Start()
     {
-
+        freq = 0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if((myManager.transform.position - transform.position).magnitude > myManager.swimLimit)
+        freq += Time.deltaTime;
+        if (freq > 0.1)
         {
-            direction = (-(transform.right - (myManager.transform.position - transform.position)));
-            
-        }
-        else
-        {
+            freq -= 0.1f;
             direction = CalculateFlock();
         }
-        Debug.Log((Cohesion() + Align() + Separation()).magnitude);
+
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), myManager.rotationSpeed * Time.deltaTime);
         transform.Translate(Time.deltaTime * speed, 0.0f, 0.0f);
-        
-        
+
+
     }
     Vector3 CalculateFlock()
     {
         Vector3 dir = Vector3.zero;
         var offsetToCenter = myManager.transform.position - transform.position;
-		
 
-        dir = (Cohesion()+ Align() + Separation()).normalized * speed;
+        if ((myManager.transform.position - transform.position).magnitude < myManager.swimLimit)
+        {
+            dir = (Cohesion() + Align() + Separation()).normalized * speed;
+        }
+        else
+        {
+            dir = (-(transform.right - (myManager.transform.position - transform.position)));
+        }
 
-        
         return dir;
     }
 
