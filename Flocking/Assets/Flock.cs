@@ -10,12 +10,6 @@ public class Flock : MonoBehaviour
     float freq;
 
     private Vector3 currentVelocity;
-    // Start is called before the first frame update
-    
-    void Start()
-    {
-        freq = 0f;
-    }
 
     // Update is called once per frame
     void Update()
@@ -29,23 +23,23 @@ public class Flock : MonoBehaviour
 
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), myManager.rotationSpeed * Time.deltaTime);
         transform.Translate(Time.deltaTime * speed, 0.0f, 0.0f);
-
-
+        
+        
     }
     Vector3 CalculateFlock()
     {
         Vector3 dir = Vector3.zero;
         var offsetToCenter = myManager.transform.position - transform.position;
-
-        if ((myManager.transform.position - transform.position).magnitude < myManager.swimLimit)
+		
+        if(offsetToCenter.magnitude < myManager.swimLimit)
         {
-            dir = (Cohesion() + Align() + Separation()).normalized * speed;
+            dir = (Cohesion()+ Align() + Separation()).normalized * speed;            
         }
         else
         {
-            dir = (-(transform.right - (myManager.transform.position - transform.position)));
+            dir = (-(transform.right - offsetToCenter));
         }
-
+               
         return dir;
     }
 
@@ -105,4 +99,5 @@ public class Flock : MonoBehaviour
         }
         return separation;
     }
+
 }
