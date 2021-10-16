@@ -20,33 +20,32 @@ public class Flock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if((myManager.transform.position - transform.position).magnitude > myManager.swimLimit)
+        if((myManager.transform.position - transform.position).magnitude > myManager.swimLimit)
         {
-            Debug.Log("me cago en dios");
-            direction = (Cohesion() + Align() + Separation()).normalized;
+            direction = (-(transform.right - (myManager.transform.position - transform.position)));
+            
         }
         else
         {
-            direction = (Cohesion() + Align() + Separation()).normalized * speed;
-            Debug.Log((Cohesion() + Align() + Separation()).normalized);
+            direction = CalculateFlock();
         }
+        Debug.Log((Cohesion() + Align() + Separation()).magnitude);
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), myManager.rotationSpeed * Time.deltaTime);
-        transform.Translate(Time.deltaTime * speed, 0.0f, 0.0f);*/
+        transform.Translate(Time.deltaTime * speed, 0.0f, 0.0f);
         
-        var boundsVector = CalculateBoundsVector() * myManager.boundsWeight;
-
-        direction = (Cohesion() + Align() + Separation() - CalculateBoundsVector()).normalized * speed;
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), myManager.rotationSpeed * Time.deltaTime);
-        transform.Translate(Time.deltaTime * speed,0.0f,0.0f);
-        Debug.Log((myManager.transform.position - transform.position).magnitude);
+        
     }
-
-    private Vector3 CalculateBoundsVector()
-	{
-		var offsetToCenter = myManager.transform.position - transform.position;
+    Vector3 CalculateFlock()
+    {
+        Vector3 dir = Vector3.zero;
+        var offsetToCenter = myManager.transform.position - transform.position;
 		bool isNearCenter = (offsetToCenter.magnitude >= myManager.boundsDistance * 0.9f);
-		return isNearCenter ? offsetToCenter : Vector3.zero;
-	}
+
+        dir = (Cohesion()+ Align() + Separation()).normalized * speed;
+
+        
+        return dir;
+    }
 
     Vector3 Cohesion()
     {
@@ -66,7 +65,7 @@ public class Flock : MonoBehaviour
         }
         if (num > 0)
             cohesion = (cohesion / num - transform.position).normalized * speed;
-
+        
         return cohesion;
     }
 
@@ -85,7 +84,8 @@ public class Flock : MonoBehaviour
         }
         if (num > 0) {
             align /= num;
-            speed = Mathf.Clamp(align.magnitude, myManager.minSpeed, myManager.maxSpeed);
+            if((myManager.transform.position - transform.position).magnitude < myManager.swimLimit) speed = Mathf.Clamp(align.magnitude, myManager.minSpeed, myManager.maxSpeed);
+            
         }
         return align;
     }

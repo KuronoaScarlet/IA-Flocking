@@ -252,9 +252,9 @@ MonoBehaviour:
   numFish: 100
   acumulator: {fileID: 1345383658}
   neighbourDistance: 40
-  minSpeed: 5
-  maxSpeed: 7
-  rotationSpeed: 6
+  minSpeed: 4.99
+  maxSpeed: 6.49
+  rotationSpeed: 6.8
   boundsWeight: 5
   boundsDistance: 10
   swimLimit: 15
