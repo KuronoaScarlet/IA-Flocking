@@ -1,0 +1,3 @@
+Link a las Releases de nuestro Repositorio de GitHub, donde se encuentran las
+carpetas necesarias para el submitting.
+	https://github.com/KuronoaScarlet/IA-Flocking/releases/tag/1.0
