@@ -46,5 +46,9 @@ public class FlockingManager : MonoBehaviour
         {
             swimLimit--;
         }
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 }
