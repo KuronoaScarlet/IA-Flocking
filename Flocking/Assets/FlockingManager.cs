@@ -38,6 +38,13 @@ public class FlockingManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            swimLimit++;
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            swimLimit--;
+        }
     }
 }
